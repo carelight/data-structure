@@ -1,0 +1,31 @@
+// geeks for geeks
+//given a array A[] = {1,2,3,7,5} and a target s=12;
+you have to return indexes of the start and end in which sum lies 
+//output = 2 4 i.e 2+3+7
+Approach - we will keep adding the numbers in a sum  and if sum crosses the target s then it will update sum and its start by 1
+in case if it get equals we will return the indexes start,i 
+vector<int> subarraySum(int arr[], int n, long long s)
+    {
+        if(s==0){
+            return {-1};        // if u find 0 
+        }
+    
+        long  int start=0 ,sum=0,flag=-1;
+   for (int i = 0; i < n; i++)
+   {
+    sum=sum+arr[i];
+    while(sum>s){
+      sum=sum-arr[start];
+      start++;
+    }
+    if(sum==s){
+      return {start+1,i+1};
+      flag=1;
+    }
+    
+   }
+   if(sum<s){
+      return {-1};   if target s is not there
+   }
+    
+    }
