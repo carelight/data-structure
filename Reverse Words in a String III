@@ -1,0 +1,23 @@
+//leetcode - 557
+given s = "Let's take LeetCode contest" 
+u have to reverse to make it look like
+Output: "s'teL ekat edoCteeL tsetnoc"
+Approach- we will take a start position at i=0   after that we will traverse from j=o to n 
+and when we detect space j=" " we will reverse string from i to j and update i= j+1
+uon reaching end we will have i at last space and we will reverse from i to end of array 
+code-
+class Solution {
+public:
+    string reverseWords(string s) {
+          int i = 0;
+        for (int j = 0; j < s.size(); ++j) {
+            if (s[j] == ' ') {
+                reverse(s.begin() + i, s.begin() + j);
+                i = j + 1;
+            }
+        }
+        reverse(s.begin() + i, s.end());
+        return s;
+    }
+};
+
