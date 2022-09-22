@@ -1,0 +1,26 @@
+//leetcode-1752
+//Given an array nums, return true if the array was originally sorted in non-decreasing order, 
+then rotated some number of positions (including zero). Otherwise, return false.
+//example-  nums = [3,4,5,1,2]
+Approach - if we will keep taversing along array and find if next elemnt if less than it if so then 
+that means you have the position from where if it will be rotated it will be declared as sorted 
+-if such condition is more than 1 times that means the given array is not in a order from where even if we 
+rotate its not gonna sorted 
+example - 5,3,4,2,1 as you can see if i count the point of decrement it lies in more than 2 positions
+at 5,3 and 4,2 
+
+code-
+class Solution {
+public:
+    bool check(vector<int>& nums) {
+        
+        int count=0;
+        int n=nums.size();
+        
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>nums[(i+1)%n])count++;
+        }
+        
+        return count<=1;   // checking the count of points where next one is decreasing 
+    }
+};
