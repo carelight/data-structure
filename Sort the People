@@ -1,0 +1,30 @@
+2418-leetcode
+given 
+ names = ["Mary","John","Emma"]
+ heights = [180,165,170]
+ you have to order names in decreasing order of their heights
+ output- ["Mary","Emma","John"]
+  Approach- 
+     in accordance with their names and height store them in map;          mp[heights[i]]=names[i];
+      now sort heights ;
+      run a loop from last to first in heights and push_back the valuers of map accordance with the height in a vector
+       for(int i=heights.size()-1;i>=0;i--){
+                ams.push_back(mp[heights[i]]);
+        return ans;
+        
+  code- 
+  class Solution {
+public:
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        unordered_map<int,string> mp;
+        vector<string> ams;
+        for(int i=0;i<names.size();i++){
+            mp[heights[i]]=names[i];
+        }
+        sort(heights.begin(),heights.end());
+          for(int i=heights.size()-1;i>=0;i--){
+                ams.push_back(mp[heights[i]]);
+          }
+        return ams;
+    }
+};
