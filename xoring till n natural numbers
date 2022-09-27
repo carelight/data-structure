@@ -1,0 +1,20 @@
+given n=15;
+int main()
+{
+    
+    int n=15;                                     on basiz of observation
+     if (n%4==0)
+     {
+          cout<<n;
+     }
+    else if(n%4==1){
+        cout<<1;
+    } 
+    
+   else if(n%4==2){
+    cout<<n+1;
+    }
+    else if(n%4==3){
+        cout<<"0";
+    }
+}
