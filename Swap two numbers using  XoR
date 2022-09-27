@@ -1,0 +1,14 @@
+gven two numbers
+a=6,b=7;
+int main(){
+    int a=6;
+    int b=7;
+     cout<<a<<b<<endl;
+     a=a^b;
+     b=a^b;           a^b^b
+     a=a^b;
+
+     
+     cout<<a<<b<<endl;
+     
+}
