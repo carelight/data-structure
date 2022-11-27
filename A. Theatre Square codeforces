@@ -1,0 +1,32 @@
+given - A rectangle of "n*m" dimenson and some  squares  one of dimenson " a "to cover the rectangle 
+ also its ok if squares size extends boundary of rectangle.
+to find : find number of squares to cover rectangle 
+  
+  approach : we know number of squares  can be calculated as 
+   number of squares fitted at length of rec. * number of rectangle fitted in breadth of rec.
+    
+    
+    code-#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  long long int n, m, a, sum;
+  cin >> n >> m >> a;
+
+  if (n % a == 0)             //check if they fit exactly or not
+    sum = n / a;
+  else
+    sum = n / a + 1;                //if its not zero then u need one more to fill
+
+  if (m % a == 0)
+  {
+    sum = sum * m / a;
+  }
+  else
+  {
+    sum = sum * ((m / a) + 1);
+  }
+  cout<<sum<<endl;
+  return 0;
+}
